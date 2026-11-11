@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>영상기반 정밀접근 | 연구 포트폴리오</title>
+  <meta name="description" content="고정익 무인기의 지상이동체 정밀접근을 위한 영상기반 상대항법 및 벡터필드 유도 연구입니다.">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">연구 포트폴리오</a>
+      <nav class="site-nav" aria-label="주요 페이지">
+        <ul>
+          <li><a href="index.html">홈</a></li>
+          <li><a href="research.html" aria-current="page">연구</a></li>
+          <li><a href="work.html">작업물</a></li>
+          <li><a href="about.html">이력</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <div class="page-head">
+      <p class="eyebrow">대표 연구</p>
+      <h1 class="page-title">영상기반 정밀접근</h1>
+      <p class="citation-block">
+        <strong>고정익 무인기의 지상이동체 정밀접근을 위한 영상기반 상대항법 및 벡터필드 유도</strong>
+        <span>한국항공우주학회 2026 추계학술대회, 1저자</span>
+      </p>
+    </div>
+
+    <section class="section" aria-labelledby="question-title">
+      <h2 id="question-title">연구 질문</h2>
+      <div class="prose">
+        <p>근거리에서는 일반 항법정보만으로 상대위치를 정밀하게 파악하기 어렵습니다. 고정익 무인기가 이동 중인 지상이동체에 정밀하게 접근하려면, 카메라 영상으로 상대위치를 어떻게 추정하고 그 값으로 유도 명령을 어떻게 만들어야 할까?</p>
+      </div>
+      <figure class="figure">
+        <a href="assets/figure-marker-geometry.png">
+          <img src="assets/figure-marker-geometry.png" width="876" height="503" alt="카메라를 단 고정익 무인기가 트럭 위의 원형 마커를 내려다보는 그림. 카메라 장착 위치와 장착각, 마커까지의 상대위치, 카메라 영상 속 원형 마커가 표시되어 있다.">
+        </a>
+        <figcaption><span class="figure-label">Fig. 2.</span> 무인기 카메라와 지상이동체 상부 원형 마커의 기하학적 관계</figcaption>
+      </figure>
+    </section>
+
+    <section class="section" id="what-i-did" aria-labelledby="did-title">
+      <h2 id="did-title">내가 한 일</h2>
+      <div class="prose">
+        <p>아래 작업은 이 연구를 위해 진행했습니다.</p>
+        <ul>
+          <li>논문을 직접 쓰고 1저자로 발표했습니다. 저자에는 교수님과 함께 기재했습니다.</li>
+          <li>식 유도와 구현은 reference 모델을 보고 직접 적용했습니다.</li>
+          <li>영상기반 상대위치 추정: 지상이동체 상부에 원형으로 배치한 적외선 마커의 영상으로 상대위치를 계산하고, 카메라 장착 위치와 장착각을 반영해 기체고정 좌표계로 변환한 뒤, 확장 칼만필터로 GPS 기반 상대위치와 융합했습니다.</li>
+          <li>정밀접근 유도: 추정한 상대위치와 지상이동체 진행방향으로 코스각과 속도명령을 만드는 벡터필드 기반 2차원 유도방법을 구성했습니다.</li>
+          <li>검증: 유도기법을 6자유도 비선형 비행동역학 모델에 적용해 시뮬레이션했습니다.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="findings" aria-labelledby="findings-title">
+      <h2 id="findings-title">알아낸 것</h2>
+      <div class="prose">
+        <ul>
+          <li>시뮬레이션에서 무인기가 지상이동체 진행방향에 정렬하며 목표 상대위치로 수렴했습니다.</li>
+          <li>수렴 시간과 최종 오차는 수치로 적지 않고 논문에 그래프로만 넣었습니다.</li>
+        </ul>
+      </div>
+      <figure class="figure">
+        <a href="assets/figure-simulation-results.png">
+          <img src="assets/figure-simulation-results.png" width="1165" height="759" alt="시간에 따른 x 오차, y 오차, 코스각을 보여 주는 그래프 세 개. x 오차와 y 오차는 0으로, 코스각은 명령값으로 수렴한다.">
+        </a>
+        <figcaption><span class="figure-label">Fig. 5.</span> 정밀접근 시뮬레이션 결과</figcaption>
+      </figure>
+    </section>
+
+    <section class="section" aria-labelledby="next-title">
+      <h2 id="next-title">다음 할 것</h2>
+      <div class="prose">
+        <p>이 연구 이후에는 정밀접근하는 방법으로 진행할 계획입니다.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>이 페이지는 Claude Code와 함께 만들었고 내용은 본인이 확인했다</p>
+    </div>
+  </footer>
+</body>
+</html>

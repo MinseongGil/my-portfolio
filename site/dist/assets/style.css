@@ -1,0 +1,454 @@
+:root {
+  color-scheme: light;
+  --paper: #faf8f3;
+  --ink: #1c2127;
+  --muted: #59616b;
+  --rule: #d8d3c7;
+  --accent: #1d4fa0;
+  --sans: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", "Segoe UI", sans-serif;
+  --mono: "Cascadia Mono", "Consolas", "Menlo", monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 1rem;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 1.0625rem/1.75 var(--sans);
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: 0.18em;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 1.4;
+}
+
+p,
+ul,
+ol {
+  margin: 0;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 60rem;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 2.5rem);
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--ink);
+  color: #fff;
+}
+
+.skip-link:focus {
+  top: 0.5rem;
+}
+
+/* 머리글 */
+.site-header {
+  border-bottom: 1px solid var(--rule);
+}
+
+.site-header .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.25rem 1.5rem;
+  padding-block: 1rem;
+}
+
+.brand {
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  color: var(--accent);
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 2px;
+}
+
+/* 본문 공통 */
+main {
+  display: block;
+  padding-block: clamp(2rem, 6vw, 4rem) 1rem;
+}
+
+.section {
+  margin-top: clamp(2.5rem, 7vw, 4rem);
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+}
+
+.section > h2 {
+  font-size: 1.25rem;
+}
+
+.page-title {
+  font-size: clamp(1.75rem, 1.3rem + 1.8vw, 2.5rem);
+}
+
+.eyebrow {
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+.lead {
+  max-width: 42rem;
+  margin-top: 0.75rem;
+  color: var(--muted);
+}
+
+.prose {
+  max-width: 42rem;
+  margin-top: 0.75rem;
+}
+
+.prose ul {
+  padding-left: 1.25rem;
+}
+
+.prose li + li {
+  margin-top: 0.5rem;
+}
+
+.prose p + ul {
+  margin-top: 0.75rem;
+}
+
+/* 첫 화면 */
+.hero h1 {
+  max-width: 36em;
+  margin-top: 0.75rem;
+  font-size: clamp(1.625rem, 1.15rem + 2.1vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: clamp(2rem, 5vw, 3rem);
+  padding: 0;
+  list-style: none;
+}
+
+.steps a {
+  display: block;
+  height: 100%;
+  padding-top: 0.75rem;
+  border-top: 2px solid var(--accent);
+  color: inherit;
+  text-decoration: none;
+}
+
+.step-no {
+  display: block;
+  color: var(--muted);
+  font: 400 0.8125rem/1.5 var(--mono);
+}
+
+.step-name {
+  display: block;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.step-note {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.steps a:hover .step-name {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.results {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: clamp(1.5rem, 4vw, 2.25rem);
+  padding: 0;
+  list-style: none;
+}
+
+.results a {
+  display: block;
+  height: 100%;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--rule);
+  color: inherit;
+  text-decoration: none;
+}
+
+.results strong {
+  display: block;
+  font-size: 1.125rem;
+}
+
+.results span {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.results a:hover strong {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* 할 수 있는 일 */
+.skills {
+  margin-top: 0.75rem;
+  padding: 0;
+  list-style: none;
+  counter-reset: skill;
+}
+
+.skills li {
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  padding-block: 1rem;
+  counter-increment: skill;
+}
+
+.skills li + li {
+  border-top: 1px solid var(--rule);
+}
+
+.skills li::before {
+  content: counter(skill);
+  color: var(--muted);
+  font: 400 0.9375rem/1.9 var(--mono);
+}
+
+.skills h3 {
+  font-size: 1.0625rem;
+}
+
+.skills p {
+  margin-top: 0.25rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+}
+
+/* 대표 연구 카드 */
+.feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(1.25rem, 4vw, 2.5rem);
+  margin-top: 0.75rem;
+}
+
+.feature h3 {
+  font-size: 1.25rem;
+}
+
+.feature .citation {
+  margin-top: 0.25rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.feature .question {
+  margin-top: 0.875rem;
+}
+
+.feature .more {
+  display: inline-block;
+  margin-top: 0.875rem;
+  font-weight: 700;
+}
+
+/* 그림 */
+.figure {
+  max-width: 42rem;
+  margin: 1.5rem 0 0;
+}
+
+.figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
+  background: #fff;
+}
+
+.figure figcaption {
+  margin-top: 0.5rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.figure-label {
+  font-family: var(--mono);
+  font-size: 0.875rem;
+}
+
+.feature .figure {
+  margin: 0;
+}
+
+/* 작업물과 이력 항목 */
+.citation-block {
+  max-width: 42rem;
+  margin-top: 0.75rem;
+}
+
+.citation-block strong {
+  display: block;
+  font-weight: 700;
+}
+
+.citation-block span {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+.entries {
+  margin-top: 0.5rem;
+}
+
+.entry {
+  display: grid;
+  grid-template-columns: 10.5rem minmax(0, 1fr);
+  gap: 0.25rem 1.5rem;
+  padding-block: 1.25rem;
+}
+
+.entry + .entry {
+  border-top: 1px solid var(--rule);
+}
+
+.entry-meta {
+  color: var(--muted);
+  font: 400 0.875rem/1.9 var(--mono);
+}
+
+.entry h3 {
+  font-size: 1.0625rem;
+}
+
+.entry-body > p,
+.entry-body > ul,
+.entry-body > dl {
+  margin-top: 0.375rem;
+}
+
+.entry-body ul {
+  padding-left: 1.25rem;
+}
+
+.entry-body li + li {
+  margin-top: 0.25rem;
+}
+
+.entry-result {
+  font-weight: 700;
+}
+
+.entry dt {
+  margin-top: 0.5rem;
+  font-weight: 700;
+}
+
+.entry dd {
+  margin: 0;
+}
+
+.entry-note {
+  margin-top: 0.75rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+/* 맨 아래 */
+.site-footer {
+  margin-top: clamp(3rem, 8vw, 5rem);
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.site-footer .wrap {
+  padding-block: 1.5rem 2.5rem;
+}
+
+@media (max-width: 44rem) {
+  .steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem 1rem;
+  }
+
+  .results,
+  .feature,
+  .entry {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .feature .figure {
+    order: -1;
+  }
+}
